@@ -37,7 +37,9 @@ navbarPage("iNaturalist heatmap",
                                  a("rOpenSci", 
                                    href = "https://ropensci.org/", 
                                    target = "_blank")
-                                 )
+                                 ),
+                               downloadButton("download_map", 
+                                              "Download map")
              ),
              br(),
              tableOutput("header")
