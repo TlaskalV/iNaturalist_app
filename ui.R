@@ -23,8 +23,10 @@ navbarPage("iNaturalist heatmap",
                                draggable = TRUE, top = "10%", left = "auto", right = "1%", bottom = "auto",
                                width = 300, height = "auto", cursor = "move", style = "opacity: 0.80; padding: 5px;", 
                                br(),
-                               p("Search and plot iNaturalist observations"),
-                               textInput("inat_query", label = "", placeholder = "Enter latin name/username"),
+                               uiOutput("choose_query"),
+                               uiOutput("type_query"),
+                               p("Limit number of the newest observations"),
+                               numericInput("num_obs", label = "", value = 100, min = 1, max = 2000000),
                                p(a(list(icon("github"), "Source code"), href = "https://github.com/Vojczech/", target="_blank")),
                                p("Data sources:", a("iNaturalist", 
                                                     href = "https://www.inaturalist.org/", 
@@ -50,7 +52,7 @@ navbarPage("iNaturalist heatmap",
              fluidRow(
                  column(12,
                         wellPanel(
-                            includeMarkdown("about.md"))
+                            includeMarkdown("README.md"))
                  )
              )
     )
