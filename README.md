@@ -2,7 +2,7 @@
 App for creating heatmaps of observations from [iNaturalist](https://www.inaturalist.org/).
 
 <div align="right">
-    <img src="/Gyps_map_readme.png?raw=true" width="600px"</img> 
+    <img src="/Gyps_map_readme.png?raw=true" width="400px"</img> 
 </div>
 
 ## Where to try app
