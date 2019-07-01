@@ -7,9 +7,14 @@ library(leaflet.extras)
 server <- function(input, output) {
   
   obs_data <- reactive(
-    rinat::get_inat_obs_user(username = input$inat_query, maxresults = 30) %>% 
+    if(input$query_type == "username"){
+    rinat::get_inat_obs_user(username = input$username_query, maxresults = input$num_obs) %>% 
       dplyr::filter(!is.na(latitude)) %>% 
       dplyr::filter(quality_grade == "research")
+    } else {
+      rinat::get_inat_obs(taxon_name = input$latin_query, maxresults = input$num_obs, quality = "research") %>% 
+        filter(!is.na(latitude))
+    }
   )
   
   heatmap <- reactive({
@@ -29,10 +34,26 @@ server <- function(input, output) {
     obs_data()
   })
   
+  output$choose_query <- renderUI({
+    radioButtons("query_type", "Filter by",
+                 c("User" = "username",
+                   "Latin name" = "latin")
+                 )
+  })
+  
+  output$type_query <- renderUI({
+    if (is.null(input$query_type))
+      return()
+    switch(input$query_type,
+           "username" = textInput("username_query", label = "", placeholder = "Enter username"),
+           "latin" = textInput("latin_query", label = "", placeholder = "Enter latin name")
+           )
+    })
+  
   # download  
   output$download_map<- downloadHandler(
     filename = function() {
-      paste("final_map", "_Vojczech.html", sep="")
+      paste("final_map_", input$inat_query, ".html", sep="")
      },
     content = function(file) {
       saveWidget(heatmap(), file = file, selfcontained = TRUE)
