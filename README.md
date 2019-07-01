@@ -1,7 +1,7 @@
 # iNaturalist observation data download
 App for creating heatmaps of observations from [iNaturalist](https://www.inaturalist.org/).
 
-<div align="right">
+<div float="right">
     <img src="/Gyps_map_readme.png?raw=true" width="400px"</img> 
 </div>
 
