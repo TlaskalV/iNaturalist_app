@@ -1,5 +1,6 @@
 # iNaturalist observation data download
 App for creating heatmaps of observations from [iNaturalist](https://www.inaturalist.org/).
+Filter **research grade** observations by scientific name or by observing user.
 
 <div float="right">
     <img src="/Gyps_map_readme.png?raw=true" width="400px"</img> 
