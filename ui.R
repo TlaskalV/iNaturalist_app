@@ -41,10 +41,11 @@ navbarPage("iNaturalist heatmap",
                                    target = "_blank")
                                  ),
                                downloadButton("download_map", 
-                                              "Download map")
-             ),
-             br(),
-             tableOutput("header")
+                                              "Download map"),
+                               hr(),
+                               downloadButton("download_data", 
+                                              "Download data table")
+             )
              )
     ),
     
@@ -57,4 +58,3 @@ navbarPage("iNaturalist heatmap",
              )
     )
 )
-
