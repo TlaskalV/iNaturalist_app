@@ -12,8 +12,7 @@ server <- function(input, output) {
       dplyr::filter(quality_grade == "research")
   )
   
-  
-  output$map <- renderLeaflet({
+  heatmap <- reactive({
     obs_data <- obs_data()
     leaflet(data = obs_data()) %>%
       addProviderTiles("CartoDB.Positron") %>% 
@@ -21,10 +20,24 @@ server <- function(input, output) {
       addHeatmap(lng = ~longitude, lat = ~latitude, radius = 8, gradient = NULL) %>% 
       addFullscreenControl
   })
+  
+  output$map <- renderLeaflet({
+    heatmap()      
+  })
 
   output$header <- renderTable({ 
     obs_data()
   })
+  
+  # download  
+  output$download_map<- downloadHandler(
+    filename = function() {
+      paste("final_map", "_Vojczech.html", sep="")
+     },
+    content = function(file) {
+      saveWidget(heatmap(), file = file, selfcontained = TRUE)
+    }
+  )
   
 }
 
