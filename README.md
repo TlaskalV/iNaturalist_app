@@ -1,6 +1,10 @@
 # iNaturalist observation data download
 App for creating heatmaps of observations from [iNaturalist](https://www.inaturalist.org/).
 
+<div align="right">
+    <img src="/Gyps_map_readme.png?raw=true" width="600px"</img> 
+</div>
+
 ## Where to try app
 
 Start your local installation of **R** language and paste following code which automatically downloads prerequisties and starts app:
