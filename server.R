@@ -65,9 +65,9 @@ server <- function(input, output) {
   output$download_data<- downloadHandler(
     filename = function() {
       if(input$query_type == "username"){
-        paste("final_map_", input$username_query, ".xlsx", sep="")
+        paste("final_data_", input$username_query, ".xlsx", sep="")
       } else {
-        paste("final_map_", input$latin_query, ".xlsx", sep="")
+        paste("final_data_", input$latin_query, ".xlsx", sep="")
       }
     },
     content = function(file) {
