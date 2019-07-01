@@ -3,6 +3,7 @@ library(rinat)
 library(dplyr)
 library(htmlwidgets)
 library(leaflet.extras)
+library(openxlsx)
 
 server <- function(input, output) {
   
@@ -30,14 +31,11 @@ server <- function(input, output) {
     heatmap()      
   })
 
-  output$header <- renderTable({ 
-    obs_data()
-  })
-  
   output$choose_query <- renderUI({
     radioButtons("query_type", "Filter by",
                  c("User" = "username",
-                   "Latin name" = "latin")
+                   "Latin name" = "latin"),
+                 selected = "latin"
                  )
   })
   
@@ -46,20 +44,34 @@ server <- function(input, output) {
       return()
     switch(input$query_type,
            "username" = textInput("username_query", label = "", placeholder = "Enter username"),
-           "latin" = textInput("latin_query", label = "", placeholder = "Enter latin name")
+           "latin" = textInput("latin_query", label = "", placeholder = "Enter latin name", value = "Gyps himalayensis")
            )
     })
   
   # download  
   output$download_map<- downloadHandler(
     filename = function() {
-      paste("final_map_", input$inat_query, ".html", sep="")
-     },
+      if(input$query_type == "username"){
+        paste("final_map_", input$username_query, ".html", sep="")
+      } else {
+        paste("final_map_", input$latin_query, ".html", sep="")
+        }
+      },
     content = function(file) {
       saveWidget(heatmap(), file = file, selfcontained = TRUE)
     }
   )
   
+  output$download_data<- downloadHandler(
+    filename = function() {
+      if(input$query_type == "username"){
+        paste("final_map_", input$username_query, ".xlsx", sep="")
+      } else {
+        paste("final_map_", input$latin_query, ".xlsx", sep="")
+      }
+    },
+    content = function(file) {
+      write.xlsx(obs_data(), file)
+    }
+  )
 }
-
-# data <- get_inat_obs(taxon_name = "Cannabis sativa", maxresults = 3000000, quality = "research") %>% filter(!is.na(latitude))
