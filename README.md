@@ -9,7 +9,7 @@ There are two options to access the app:
 
 
 ```
-install.packages(c("shiny", "shinythemes", "leaflet", "dplyr", "rinat", "devtools", "htmlwidgets"))
+install.packages(c("shiny", "shinythemes", "leaflet", "dplyr", "rinat", "devtools", "htmlwidgets", "openxlsx"))
 devtools::install_github("rstudio/fontawesome")
 library(shiny)
 runGitHub("iNaturalist heatmaps", "Vojczech") 
