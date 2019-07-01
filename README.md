@@ -3,9 +3,7 @@ App for creating heatmaps of observations from [iNaturalist](https://www.inatura
 
 ## Where to try app
 
-There are two options to access the app:
-* online web app hosted on [labenvmicro.shinyapps.io](https://labenvmicro.shinyapps.io/TMS_app/) 
-* or start your local installation of **R** language and paste following code which automatically downloads prerequisties and starts app:
+Start your local installation of **R** language and paste following code which automatically downloads prerequisties and starts app:
 
 
 ```
