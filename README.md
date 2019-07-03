@@ -1,18 +1,18 @@
 # iNaturalist observation data download
-App for creating heatmaps of observations from [iNaturalist](https://www.inaturalist.org/).
+App for creating observation heatmap from [iNaturalist](https://www.inaturalist.org/).
 
-Filter **research grade** observations by scientific name of organisms or by observing user.
+1. Filter **research grade** observations by scientific name of organism or by observing user.
 
-Download either zoomable and interactive **html file** or source **data table**.
+2. Download either zoomable and interactive **html file** or source **data table**.
 
 <div float="right">
-    <img src="/Gyps_map_readme.png?raw=true" width="400px"</img> 
+    [<img src="/Gyps_map_readme.png?raw=true" width="400px"</img>](https://labenvmicro.shinyapps.io/iNaturalist_app/)
 </div>
 
-## Where to try app
+## Where to try the app
 
 There are two options to access the app:
-* [lonline web app](https://labenvmicro.shinyapps.io/iNaturalist_app/) 
+* [online web interface](https://labenvmicro.shinyapps.io/iNaturalist_app/) 
 * or start your local installation of **R** language and paste following code which automatically downloads prerequisties and starts app:
 
 
