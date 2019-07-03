@@ -1,5 +1,5 @@
 # iNaturalist observation data visualization
-App for creating observation heatmap from [iNaturalist](https://www.inaturalist.org/).
+App for creating observation heatmap from [iNaturalist](https://www.inaturalist.org/) with use of [rinat package](https://github.com/ropensci/rinat).
 
 1. Filter **research grade** observations by scientific name of organism or by observing user.
 
