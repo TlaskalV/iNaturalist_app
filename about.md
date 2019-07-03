@@ -1,10 +1,13 @@
-# iNaturalist observation data download
-App for creating heatmaps of observations from [iNaturalist](https://www.inaturalist.org/).
-Filter **research grade** observations by scientific name or by observing user.
+# iNaturalist observation data visualization
+App for creating observation heatmap from [iNaturalist](https://www.inaturalist.org/) with use of [rinat package](https://github.com/ropensci/rinat).
+
+1. Filter **research grade** observations by scientific name of organism or by observing user.
+
+2. Download either zoomable and interactive **html file** or source **data table**.
 
 [Source code](https://github.com/Vojczech/iNaturalist_app)
 
-## Where to try app
+## How to try app locally
 
 Start your local installation of **R** language and paste following code which automatically downloads prerequisties and starts app:
 
