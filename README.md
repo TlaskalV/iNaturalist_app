@@ -6,7 +6,7 @@ App for creating observation heatmap from [iNaturalist](https://www.inaturalist.
 2. Download either zoomable and interactive **html file** or source **data table**.
 
 <div float="right">
-    <img src="/Gyps_map_readme.png?raw=true" width="400px"</img>
+    <img align="right" src="/Gyps_map_readme.png?raw=true" width="400px"</img>
 </div>
 
 ## Where to try the app
